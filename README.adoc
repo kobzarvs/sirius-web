@@ -50,11 +50,11 @@ If you do not have Docker or want to use an existing PostgreSQL installation, ad
 +
 [source,sh]
 ----
-java -jar sirius-web-sample-application.jar \
+java -jar -Dspring.profiles.active=dev sirius-web-sample-application.jar \
           --spring.datasource.url=jdbc:postgresql://localhost:5433/sirius-web-db \
           --spring.datasource.username=dbuser \
           --spring.datasource.password=dbpwd \
-          --spring.liquibase.change-log=classpath:db/changelog/sirius-web.db.changelog-master.xml
+          --spring.liquibase.change-log=classpath:db/changelog/sirius-web.db.changelog.xml
 ----
 3. Point your browser at http://localhost:8080 and enjoy!
 +
